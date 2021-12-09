@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <title>Vue Counter</title>
+</head>
+
+<body>
+  <section id="app" class="section container">
+
+    <h1 class="title" style="text-align:center">Vue Counter</h1>
+    <div class="box content has-text-centered">
+      <h2 class="title is-1">{{ count }}</h2>
+      <a class="button is-primary" v-on:click="increaseCounter">Count Up</a>
+      <a class="button is-danger" v-on:click="decreaseCounter">Count Down</a>
+      <br>
+      <a class="button is-light" v-on:click="resetCounter">Reset</a>
+    </div>
+  </section>
+
+  <!--The JavaScript-->
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        count: 0
+      },
+      methods: {
+        increaseCounter: function () {
+          this.count += 1;
+        },
+
+        decreaseCounter: function () {
+          this.count -= 1;
+        },
+
+        resetCounter: function () {
+          this.count = 0;
+        }
+      }
+    });
+
+        // let count = 0;
+    // const countPosition = document.querySelector('h2.title');
+    // const incrementButton = document.querySelector('.button');
+
+    // countPosition.innerText = count;
+
+    // incrementButton.addEventListener('click', incrementCounter);
+    // function incrementCounter(e) {
+    //   e.preventDefault();
+    //   count += 1;
+    //   countPosition.innertext = count;
+    // }
+
+  </script>
+</body>
+
+</html>
